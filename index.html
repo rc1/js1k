@@ -1,0 +1,37 @@
+
+<html><head><title>rosscairns.com &mdash; digital designer and creative programmer</title><style type="text/css">h1 {
+    font-family: Monaco, Courier New, Courier, monospaced;
+    font-weight: 100;
+    font-size: 10px;
+    display: block;
+    position: fixed;
+    z-index: 10;
+    top: 20px;
+    left: 10px;
+    background: white;
+    margin:0;
+    padding:0;
+    padding-left: 10px;
+    width: auto;
+}
+strong {
+    font-weight:800;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+a, a:visited {
+    color: grey;
+    text-decoration: none;
+}
+a:hover {
+    color: green;
+}</style><script>function load() {
+    var d=document,i=d.getElementById("c"),w=i.width=innerWidth,h=i.height=innerHeight,c=i.getContext("2d"),e,$=10,o=[],m=[],j=0,l=200,p=w/2,q=h/2,s=0.97,ds=0.99,t=[],g=[w/2+100,0,-w-200,w/2,0,60,-3000,+3000],n=[0,h/2,-h,h/2+100,0,-1000,0,+1000],ml=8,r=100,b=0,dc=0;
+    d.onmousemove=function(e){if(e.pageX)m=[e.pageX,e.pageY,Math.random(),1];} 
+    function O(x,y,s,h){if(h>0.1)c.fillStyle="#000";else c.fillStyle='hsl(' + Math.random() * 255 + ', 50%, 60%)';c.beginPath();c.arc(x,y,100*s,0,6.3);c.closePath();c.fill();c.fillStyle="#FFF";}
+    function a(){c.fillRect(0,0,w,h);j=o.push([m[0],m[1],m[2],m[3]]);if(j>=l)o.shift();for (z in o){_=o[z];O(_[0]=((_[0]-p)*s)+p, _[1]=((_[1]-q)*s)+q, _[3]=_[3] * ds, _[2])};for(e=0;e<w;e+=$*2)c.fillRect(e,0,$,h);for(i in t) t[i].s();} 
+    function T(v,t,d) {_=this;_.v=v;_.t=t;_.d=d;_.c=0;_.s = function(){_=this; if(_.c != _.d) {_.c++; eval(_.v+" += _.t/_.d;");}}} 
+    function e(f,t){setInterval(f,t)};e(a,1);e(function() {if(b<ml) {t.push(new T('p',g[b],r));t.push(new T('q',n[b],r));b++;}},8000);
+}</script></head><body onload="load()"><canvas id="c" width="100%" height="100%"></canvas></body></html>
